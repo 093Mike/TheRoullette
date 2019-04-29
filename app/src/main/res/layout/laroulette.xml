@@ -50,14 +50,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:gravity="center"
-                android:text="ew" />
+                android:gravity="center" />
         </LinearLayout>
     </ScrollView>
 
     <Button
         android:id="@+id/buttonStart"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClickButtonRotation"
         android:text="ROTAR"></Button>
