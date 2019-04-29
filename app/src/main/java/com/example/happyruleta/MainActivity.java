@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -35,16 +36,29 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void empezarRuleta(View v) {
-        premios.clear();
-        for(int i=0;i<editTexts.length;i++){
-            if(i<num_premios){
-                premios.add(editTexts[i].getText().toString());
+        boolean continuar=false;
+        for (int i=0 ; i < num_premios ; i++){
+            if(editTexts[num_premios-1].getText().toString().equals("")){
+                continuar = true;
             }
+
         }
-        Intent startRoulete = new Intent(this,LarouletteClass.class);
-        startRoulete.putExtra("array",premios);
-        startRoulete.putExtra("numeroPremios",num_premios);
-        startActivity(startRoulete);
+        if(!continuar){
+            premios.clear();
+            for(int i=0;i<editTexts.length;i++){
+                if(i<num_premios){
+                    premios.add((premios.size()+1)+" - "+editTexts[i].getText().toString());
+                }
+            }
+            Intent startRoulete = new Intent(this,LarouletteClass.class);
+            startRoulete.putExtra("array",premios);
+            startRoulete.putExtra("numeroPremios",num_premios);
+            startActivity(startRoulete);
+        }
+        else{
+            Toast.makeText(this, "RELLENA TODOS LOS ITEMS / PREMIOS", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     public void items(){

@@ -20,7 +20,6 @@ public class LarouletteClass extends AppCompatActivity implements Animation.Anim
     boolean blnButtonRotation = true;
     ImageView selected, imageRoulette;
     Button b_start;
-    ImageView ruleta;
     TextView miembros;
     int[] id_imagenes = new int[]{R.drawable.roulette_2,R.drawable.roulette_3,R.drawable.roulette_4,R.drawable.roulette_5,
             R.drawable.roulette_6,R.drawable.roulette_7,R.drawable.roulette_8,R.drawable.roulette_9,R.drawable.roulette_10};
@@ -33,10 +32,9 @@ public class LarouletteClass extends AppCompatActivity implements Animation.Anim
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.laroulette);
-        ruleta = findViewById(R.id.rouletteImage);
+        imageRoulette = findViewById(R.id.rouletteImage);
         b_start = findViewById(R.id.buttonStart);
         selected = findViewById(R.id.imageSelected);
-        imageRoulette = findViewById(R.id.rouletteImage);
         miembros = findViewById(R.id.premios);
         premios =(ArrayList<String>) getIntent().getSerializableExtra("array");
         miembros.setText("");
@@ -44,7 +42,7 @@ public class LarouletteClass extends AppCompatActivity implements Animation.Anim
             miembros.setText(miembros.getText().toString()+premios.get(i)+"\n");
         }
         intNumber = getIntent().getIntExtra("numeroPremios",0);
-        ruleta.setImageResource(id_imagenes[intNumber-2]);
+        imageRoulette.setImageResource(id_imagenes[intNumber-2]);
 
 
     }
