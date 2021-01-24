@@ -122,7 +122,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="16dp"
-        android:text="1.6"
+        android:text="1.7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/buttonStart"
         app:layout_constraintStart_toStartOf="parent" />
